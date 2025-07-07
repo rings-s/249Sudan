@@ -1,0 +1,35 @@
+<!-- app/templates/emails/welcome_email.html -->
+<div class="email-header">
+    <h1>Welcome to {{ company_name }}!</h1>
+    <p style="margin: 10px 0 0 0; opacity: 0.9;">Your Learning Journey Begins</p>
+</div>
+
+<div class="email-body">
+    <h2>Hello {{ user_name }}!</h2>
+    
+    <p>Congratulations! Your email has been verified and your account is now fully activated.</p>
+    
+    <p>Here's what you can do next:</p>
+    
+    <ul style="line-height: 2;">
+        <li><strong>Browse Courses:</strong> Explore our extensive library of courses</li>
+        <li><strong>Set Learning Goals:</strong> Define what you want to achieve</li>
+        <li><strong>Join Discussions:</strong> Connect with fellow learners</li>
+        <li><strong>Track Progress:</strong> Monitor your learning journey</li>
+        <li><strong>Earn Certificates:</strong> Complete courses and showcase your achievements</li>
+    </ul>
+    
+    <div style="text-align: center;">
+        <a href="{{ frontend_url }}/courses" class="button">Browse Courses</a>
+    </div>
+    
+    <div style="margin-top: 30px; padding: 20px; background-color: #e3f2fd; border-radius: 5px;">
+        <h3 style="margin-top: 0; color: #1976d2;">💡 Pro Tip</h3>
+        <p style="margin-bottom: 0;">Start with courses marked as "Beginner" level and work your way up. Consistency is key to successful learning!</p>
+    </div>
+</div>
+
+<div class="email-footer">
+    <p>&copy; {{ current_year }} {{ company_name }}. All rights reserved.</p>
+    <p>Questions? Visit our <a href="{{ frontend_url }}/help" style="color: #667eea;">Help Center</a></p>
+</div>

@@ -1,0 +1,36 @@
+<!-- app/templates/emails/password_reset.html -->
+<div class="email-header">
+    <h1>{{ company_name }}</h1>
+    <p style="margin: 10px 0 0 0; opacity: 0.9;">Password Reset Request</p>
+</div>
+
+<div class="email-body">
+    {% if user_name %}
+    <h2>Hello {{ user_name }}!</h2>
+    {% else %}
+    <h2>Hello!</h2>
+    {% endif %}
+    
+    <p>We received a request to reset your password for your {{ company_name }} account.</p>
+    
+    <p>Your password reset code is:</p>
+    
+    <div class="code-box">{{ reset_code }}</div>
+    
+    <p>Enter this code along with your new password on the reset page.</p>
+    
+    {% if reset_url %}
+    <div style="text-align: center;">
+        <a href="{{ reset_url }}" class="button">Reset Password</a>
+    </div>
+    {% endif %}
+    
+    <p><strong>This code will expire in {{ expiry_hours }} hour(s).</strong></p>
+    
+    <p>If you didn't request a password reset, please ignore this email. Your password will remain unchanged.</p>
+</div>
+
+<div class="email-footer">
+    <p>&copy; {{ current_year }} {{ company_name }}. All rights reserved.</p>
+    <p>Learn safely and securely.</p>
+</div>
